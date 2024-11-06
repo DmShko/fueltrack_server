@@ -21,6 +21,8 @@ const signup = async (req, res) => {
   
     // for create unique 409 message. Does base have sach email?
     const user = await User.findOne({email});
+
+    console.log(user);
     // if sach email exist
     if(user) throw HttpError(409, "Email in use");
 
@@ -47,7 +49,7 @@ const signup = async (req, res) => {
         port: 465, //465 or 25 or 2525. 465 - protected port
         secure: true, // on crypt
         auth: {
-            user: 'medicine2024.service@gmail.com',
+            user: 'fueltrack2024.service@gmail.com',
             pass: GOOGLE_PASSWORD,
         },
     };

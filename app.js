@@ -8,7 +8,7 @@ require('dotenv').config();
 
 // import routers
 const trackRouter = require('./routes/api/track');
-// const authRouter = require('./routes/api/auth');
+const authRouter = require('./routes/api/auth');
 
 // create server 'pills'
 const track = express();
@@ -18,7 +18,7 @@ track.use(express.json());
 track.use(express.static('public'));
 
 //on each get typeof '/api/track' go to 'trackRouter'
-// shop.use('/api/auth', authRouter);
+track.use('/api/auth', authRouter);
 track.use('/api/track', trackRouter);
 
 track.use((req, res) => {
