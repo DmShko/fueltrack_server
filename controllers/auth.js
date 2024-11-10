@@ -18,11 +18,10 @@ const signup = async (req, res) => {
     const { body } = req;
     const { email, password } = req.body;
     const { error } = schemas.checkRegister.validate(body);
-  
+    
     // for create unique 409 message. Does base have sach email?
     const user = await User.findOne({email});
 
-    console.log(user);
     // if sach email exist
     if(user) throw HttpError(409, "Email in use");
 
@@ -59,7 +58,7 @@ const signup = async (req, res) => {
 
     const verify = {
         to: email,
-        from: 'medicine2024.service@gmail.com',
+        from: 'fueltrack2024.service@gmail.com',
         subject: "Verify email",
         html: `<a target="_blank" href="${BASE_URL}/api/auth/verify/${verificationCode}">Click verify email</a>`,
     };
@@ -103,7 +102,7 @@ const resendVerifyEmail = async (req, res) => {
     const { body } = req;
     const { email } = req.body.data;
     const { error } = schemas.emailSchema.validate(body.data);
-   
+  
     // ather error message (from frontend)
     if (error) {
         throw HttpError(
@@ -125,7 +124,7 @@ const resendVerifyEmail = async (req, res) => {
         port: 465, //465 or 25 or 2525. 465 - protected port
         secure: true, // on crypt
         auth: {
-            user: 'medicine2024.service@gmail.com',
+            user: 'fueltrack2024.service@gmail.com',
             pass: GOOGLE_PASSWORD,
         },
     };
@@ -136,7 +135,7 @@ const resendVerifyEmail = async (req, res) => {
     const verify = {
         to: email,
         from: 'dmitry.schevchenko.work@gmail.com',
-        subject: "Medicine service verify email",
+        subject: "Fueltrack service verify email",
         html: `
         <head>
 
@@ -172,12 +171,12 @@ const resendVerifyEmail = async (req, res) => {
     });
 };
 
-const login = async (req, res) => {
+const signin = async (req, res) => {
 
     const { body } = req;
     const { email, password } = req.body;
-    const { error } = schemas.checkLogin.validate(body);
-
+    const { error } = schemas.checkSignin.validate(body);
+    
     // ather error message (from frontend)
     if (error) {
         throw HttpError(
@@ -188,7 +187,7 @@ const login = async (req, res) => {
 
     // check email that user with sach email use (on DB resource) return user {...} if he exist.
     const user = await User.findOne({email});
-
+   
     if(!user) throw HttpError(401, "Email or password wrong");
 
     // if email comfirm
@@ -238,7 +237,7 @@ const logout = async(req, res) => {
 
 module.exports = {
     signup: ctrlWrapper(signup),
-    login: ctrlWrapper(login),
+    signin: ctrlWrapper(signin),
     logout: ctrlWrapper(logout),
     getCurrent: ctrlWrapper(getCurrent),
     verifyEmail: ctrlWrapper(verifyEmail),

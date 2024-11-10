@@ -4,6 +4,11 @@ const { handleMongooseError } = require("../helpers");
 
 // crete object schema (keyword 'new' for ES6): 1st argument - object decription
 const userSchema = new Schema({
+    company: {
+        type: String,
+        match: /\w{0}[0-9a-zA-Za-яА-Я]/,
+        required: [true, 'Company name is required'],  
+    },
     name: {
         type: String,
         required: [true, 'Name is required'],  

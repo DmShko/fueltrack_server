@@ -13,7 +13,7 @@ const authRouter = express.Router();
 authRouter.post("/signup", validateBody(schemas.checkRegister), controllers.signup);
 
 // singIn
-authRouter.post("/signin", validateBody(schemas.checkLogin), controllers.login);
+authRouter.post("/signin", validateBody(schemas.checkSignin), controllers.signin);
 
 // verificate (get reg from user email)
 authRouter.get("/verify/:verificationCode", controllers.verifyEmail);

@@ -2,7 +2,7 @@ const { trackSchema } = require('./track');
 const {
   checkRegister,
   emailSchema,
-  checkLogin,
+  checkSignin,
 } = require("./auth");  
 
 module.exports = {
@@ -10,6 +10,6 @@ module.exports = {
   trackSchema,
   checkRegister,
   emailSchema,
-  checkLogin,
+  checkSignin,
       
 };
