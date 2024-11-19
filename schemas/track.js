@@ -2,10 +2,12 @@ const Joi = require("joi");
 
 const trackSchema = Joi.object({
   _id: Joi.string().required(),
-  fuel: Joi.string().allow(''),
-  refuel_liters: Joi.string().allow(''),
-  km_day: Joi.string().allow(''),
-  liters_day: Joi.string().allow(''),
+  liters: Joi.string().allow(''),
+  marck: Joi.string().allow(''),
+  price: Joi.string().allow(''),
+  km: Joi.string().allow(''),
+  pay: Joi.string().allow(''),
+  date: Joi.string().required(),
 });
 
 module.exports = { trackSchema };

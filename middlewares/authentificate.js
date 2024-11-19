@@ -37,7 +37,7 @@ const getAuthData = (data) => {
 // or use passport (passport jwt)
 const authentificate = async (req, res, next) => {
     const tokenData = getAuthData(req);
-
+ 
     const { bearer, token } = tokenData;
 
     if(bearer !== 'Bearer') next(HttpError(401, "Incorrect token"));

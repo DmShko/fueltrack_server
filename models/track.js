@@ -11,22 +11,27 @@ const trackSchem = new Schema({
         required: [true, '_id is required'],
     },
 
-    fuel: {
+    liters: {
         type: String,
         required: [false],
     },
 
-    refuel_liters: {
+    marck: {
         type: String,
         required: [false],
     },
 
-    km_day: {
+    price: {
         type: String,
         required: [false],
     },
 
-    liters_day: {
+    km: {
+        type: String,
+        required: [false],
+    },
+
+    pay: {
         type: String,
         required: [false],
     },
