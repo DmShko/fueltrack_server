@@ -36,6 +36,11 @@ const trackSchem = new Schema({
         required: [false],
     },
 
+    burn: {
+        type: String,
+        required: [false],
+    },
+
     date: {
         type: String,
         required: [true, 'date is required'],

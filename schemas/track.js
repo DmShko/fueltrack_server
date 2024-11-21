@@ -7,6 +7,7 @@ const trackSchema = Joi.object({
   price: Joi.string().allow(''),
   km: Joi.string().allow(''),
   pay: Joi.string().allow(''),
+  burn: Joi.string().required(),
   date: Joi.string().required(),
 });
 
