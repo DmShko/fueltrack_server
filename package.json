@@ -1,6 +1,18 @@
 {
   "name": "fueltrack_server",
   "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/DmShko/fueltrack_server#readme",
+  "bugs": {
+    "url": "https://github.com/DmShko/fueltrack_server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmShko/fueltrack_server.git"
+  },
+  "license": "ISC",
+  "author": "Dmitry Shevchenko",
+  "type": "commonjs",
   "main": "server.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node server.js",
@@ -8,9 +20,6 @@
     "lint": "eslint **/*.js",
     "lint:fix": "eslint --fix **/*.js"
   },
-  "author": "Dmitry Shevchenko",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
