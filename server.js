@@ -1,3 +1,5 @@
+require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]); // see file !!!readme.txt
+
 // import 'tracks' veb-server
 const track = require('./app');
 const mongoose = require('mongoose');
@@ -15,7 +17,7 @@ mongoose.connect(DB_HOST).then(() =>{
 }).catch(error => {
 
     console.log(error.message);
-
+  
     // close started process: '1' means - close with unknow error
     process.exit(1);
 });

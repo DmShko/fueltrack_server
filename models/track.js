@@ -2,6 +2,7 @@ const {Schema, model} = require('mongoose');
 
 const { handleMongooseError } = require("../helpers");
 // const { boolean } = require('joi');
+// const { boolean } = require('joi');
 
 // add mongoose schem
 const trackSchem = new Schema({
@@ -51,6 +52,11 @@ const trackSchem = new Schema({
         ref: 'user', // collection name
         require: true,
     },
+
+    selected: {
+        type: Boolean,
+        required: [false],
+    }
 
 }, {versionKey: false, timestamps: true,});
 

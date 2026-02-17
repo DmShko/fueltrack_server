@@ -9,7 +9,7 @@ const getTrackAll = async (req, res) => {
   const { _id } = req.user; // see authentificate.js 31 row
 
   const result = await Track.find({owner: _id}, '-createdAt -updatedAt');
-  // '-createdAt -updatedAt' - for not response 'create' and 'update' fields
+  // '-createdAt -updatedAt' - for not response 'create' and 'update' fields (no need to return this two fields)
   //.populate('owner') - if need responce detail information instead only id
 
   res.status(200).json(result);

@@ -9,6 +9,7 @@ const trackSchema = Joi.object({
   pay: Joi.string().allow(''),
   burn: Joi.string().required(),
   date: Joi.string().required(),
+  selected: Joi.boolean(),
 });
 
 module.exports = { trackSchema };

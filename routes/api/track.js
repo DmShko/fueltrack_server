@@ -1,5 +1,5 @@
 const express = require('express');
-const { validateBody, authentificate } = require('../../middlewares');
+const { validateBody, authentificate, isValidId } = require('../../middlewares');
 
 const controllers = require('../../controllers/track');
 
@@ -10,9 +10,9 @@ const schemas = require('../../schemas');
 const trackRouter = express.Router();
 
 trackRouter.get("/", authentificate, controllers.getTrackAll);
-trackRouter.get("/:id", authentificate, controllers.getTrackById);
+trackRouter.get("/:id", authentificate, isValidId, controllers.getTrackById);
 trackRouter.post("/", authentificate, validateBody(schemas.trackSchema), controllers.addTrack);
-trackRouter.put("/:id", authentificate, validateBody(schemas.trackSchema), controllers.updateTrackById);
+trackRouter.put("/:id", authentificate, isValidId, validateBody(schemas.trackSchema), controllers.updateTrackById);
 trackRouter.delete("/", authentificate, validateBody(schemas.trackSchema), controllers.deleteTrackById);
 
 // export to app
