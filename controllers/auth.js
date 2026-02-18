@@ -210,6 +210,8 @@ const signin = async (req, res) => {
 
     res.status(200).json({
         token,
+        id: user._id,
+        company: user.company,
     });
 };
 

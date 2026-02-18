@@ -36,6 +36,11 @@ const userSchema = new Schema({
         type: String,
         default: "",
     },
+    bossId:{
+        type: String,
+        default: "",
+        required: false,
+    }
 },{
     versionKey: false, timestamps: true, // Disable version stamp
 });
