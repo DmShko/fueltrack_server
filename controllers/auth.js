@@ -226,7 +226,7 @@ const getCurrent = (req, res) => {
 };
 
 const logout = async(req, res) => {
- 
+   
     const { _id } = req.user;
     
     await User.findByIdAndUpdate(_id, {token: ""});
@@ -236,6 +236,8 @@ const logout = async(req, res) => {
     });
   
 };
+
+
 
 module.exports = {
     signup: ctrlWrapper(signup),

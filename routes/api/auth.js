@@ -27,5 +27,8 @@ authRouter.post("/logout", authentificate, controllers.logout);
 // get current user
 authRouter.get("/current", authentificate, controllers.getCurrent);
 
+// get collaborates only
+// authRouter.get("/:id",  controllers.getCollaborates);
+
 // export to app
 module.exports = authRouter;

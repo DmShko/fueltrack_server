@@ -56,14 +56,14 @@ const addTrack = async (req, res) => {
 };
 
 const updateTrackById = async (req, res) => {
- 
+      
     const { _id } = req.user;
-    const { id } = req.query;
+    const { id } = req.params;
   
     const { body } = req;
 
     const { error } = schemas.trackSchema.validate(body.data);
-    
+
     if (error) {
       throw HttpError(
         400,

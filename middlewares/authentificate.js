@@ -7,7 +7,7 @@ const User = require("../models/user");
 const { SECRET_KEY } = process.env;
 
 const getAuthData = (data) => {
-
+    
     let tokenParts = {};
 
     const getTypeofReq = (value) => {

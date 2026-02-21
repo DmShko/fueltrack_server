@@ -9,6 +9,7 @@ require('dotenv').config();
 // import routers
 const trackRouter = require('./routes/api/track');
 const authRouter = require('./routes/api/auth');
+const collabRouter = require('./routes/api/collabo');
 
 // create server 'pills'
 const track = express();
@@ -20,6 +21,7 @@ track.use(express.static('public'));
 //on each get typeof '/api/track' go to 'trackRouter'
 track.use('/api/auth', authRouter);
 track.use('/api/track', trackRouter);
+track.use('/api/collabo', collabRouter);
 
 track.use((req, res) => {
     res.status(404).json({message: 'Not found'});
