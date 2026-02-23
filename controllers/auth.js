@@ -212,6 +212,7 @@ const signin = async (req, res) => {
         token,
         id: user._id,
         company: user.company,
+        name: user.name
     });
 };
 

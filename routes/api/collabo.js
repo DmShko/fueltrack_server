@@ -7,6 +7,7 @@ const controllers = require('../../controllers/collaborates');
 const collabRouter = express.Router();
 
 // get collaborates only
+collabRouter.get("/", authentificate, controllers.getCollabTracks);
 collabRouter.get("/:id", authentificate, isValidId, controllers.getCollaborates);
 
 // export to app
