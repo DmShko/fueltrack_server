@@ -7,6 +7,7 @@ const checkRegister = Joi.object({
     email: Joi.string().pattern(/\w{0}[0-9a-zA-Za-яА-Я]+@\w{0}[0-9a-zA-Za-яА-Я]+\.\w{0}[0-9a-zA-Za-яА-Я]/).required(),
     password: Joi.string().min(8).required(),
     bossId: Joi.string().optional().allow(''),
+    isCatch: Joi.boolean().required(),
 });
 
 // for reverificate email

@@ -9,6 +9,7 @@ const collabRouter = express.Router();
 // get collaborates only
 collabRouter.get("/", authentificate, controllers.getCollabTracks);
 collabRouter.get("/:id", authentificate, isValidId, controllers.getCollaborates);
+collabRouter.delete("/", authentificate, controllers.deleteCollabTracks);
 
 // export to app
 module.exports = collabRouter;

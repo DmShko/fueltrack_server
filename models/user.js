@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const { handleMongooseError } = require("../helpers");
+const { boolean } = require("joi");
 
 // crete object schema (keyword 'new' for ES6): 1st argument - object decription
 const userSchema = new Schema({
@@ -40,7 +41,12 @@ const userSchema = new Schema({
         type: String,
         default: "",
         required: false,
-    }
+    },
+    isCatch:{
+        type: Boolean,
+        default: false,
+        required: false,
+    },
 },{
     versionKey: false, timestamps: true, // Disable version stamp
 });
