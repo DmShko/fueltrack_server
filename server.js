@@ -5,7 +5,7 @@ const track = require('./app');
 const mongoose = require('mongoose');
 const cron = require('node-cron');
 // connect URL with password and database name see below!
-const { DB_HOST, PORT=3000 } = process.env;
+const { DB_HOST, PORT=Number(process.env.PORT) || 3000 } = process.env;
 
 mongoose.set('strictQuery', true);
 
