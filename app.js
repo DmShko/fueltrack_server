@@ -27,6 +27,10 @@ track.use((req, res) => {
     res.status(404).json({message: 'Not found'});
 });
 
+track.use('/api/cron-ping', (req, res) => {
+    res.status(200).send('Server is awake!');
+});
+
 // universal error hundler
 track.use((err, req, res, next) => {
     const { status = 500, message = "Server error" } = err;
