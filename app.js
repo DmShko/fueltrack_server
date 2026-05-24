@@ -23,12 +23,13 @@ track.use('/api/auth', authRouter);
 track.use('/api/track', trackRouter);
 track.use('/api/collabo', collabRouter);
 
-track.use((req, res) => {
-    res.status(404).json({message: 'Not found'});
-});
 
 track.use('/api/cron-ping', (req, res) => {
     res.status(200).send('Server is awake!');
+});
+
+track.use((req, res) => {
+    res.status(404).json({message: 'Not found'});
 });
 
 // universal error hundler
